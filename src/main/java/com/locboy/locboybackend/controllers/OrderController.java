@@ -4,6 +4,7 @@ package com.locboy.locboybackend.controllers;
 import com.locboy.locboybackend.dtos.OrderDTO;
 import com.locboy.locboybackend.dtos.ProductDTO;
 import com.locboy.locboybackend.models.Order;
+import com.locboy.locboybackend.services.IOrderService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import java.util.List;
 @RequestMapping("${api.prefix}/orders")
 @RequiredArgsConstructor
 public class OrderController {
+    private IOrderService orderService;
 
     @PostMapping("")
     public ResponseEntity<?> createOrder(
@@ -31,31 +33,48 @@ public class OrderController {
                         .toList();
                 return ResponseEntity.badRequest().body(errorMessages);
             }
-            Order
-            return ResponseEntity.ok("createOrder successfully");
+            Order orderResponse = orderService.createOrder(orderDTO);
+            return ResponseEntity.ok(orderResponse);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
-    @GetMapping("/{user_id}")
+    @GetMapping("/user/{user_id}")
     public ResponseEntity<?> getOrders(@Valid @PathVariable("user_id") Long userId){
         try {
-            return ResponseEntity.ok("Lấy ra danh sách order từ user_id");
+            List<Order> orders = orderService.findByUserId(userId);
+            return ResponseEntity.ok(orders);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getOrder(@Valid @PathVariable("id") Long orderId){
+        try {
+            Order orders = orderService.getOrder(orderId);
+            return ResponseEntity.ok(orders);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<?> updateOrder(
             @Valid @PathVariable long id,
             @Valid @RequestBody OrderDTO orderDTO) {
-        return ResponseEntity.ok("Cập nhật thông tin 1 order");
+        try {
+            Order order = orderService.updateOrder(id, orderDTO);
+            return ResponseEntity.ok(order);
+        }catch (Exception ex){
+            return ResponseEntity.badRequest().body(ex.getMessage());
+        }
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteOrder(@Valid @PathVariable Long id) {
-        //xóa mềm => cập nhật trường active = false
+        orderService.deleteOrder(id);
         return ResponseEntity.ok("Order deleted successfully.");
     }
 }

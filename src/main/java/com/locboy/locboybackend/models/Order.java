@@ -40,7 +40,7 @@ public class Order {
     private String note;
 
     @Column(name = "order_date")
-    private LocalDateTime orderDate;
+    private Date orderDate;
 
     @Column(name = "status")
     private String status;
