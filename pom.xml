@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<<<<<<< HEAD
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+=======
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+>>>>>>> f2775ceda548ef933c87fb4ae8ce5a005a4ebab7
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
+<<<<<<< HEAD
 		<version>3.3.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
@@ -15,11 +20,27 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>21</java.version>
+=======
+		<version>3.2.0</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.locboy</groupId>
+	<artifactId>locboy-backend</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>locboy-backend</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>17</java.version>
+>>>>>>> f2775ceda548ef933c87fb4ae8ce5a005a4ebab7
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+<<<<<<< HEAD
 			<artifactId>spring-boot-starter-actuator</artifactId>
+=======
+			<artifactId>spring-boot-starter-web</artifactId>
+>>>>>>> f2775ceda548ef933c87fb4ae8ce5a005a4ebab7
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -27,6 +48,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+<<<<<<< HEAD
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
 		<dependency>
@@ -60,6 +82,11 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
+=======
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		<dependency>
+>>>>>>> f2775ceda548ef933c87fb4ae8ce5a005a4ebab7
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
@@ -70,6 +97,7 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+<<<<<<< HEAD
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
@@ -77,6 +105,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
+=======
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+>>>>>>> f2775ceda548ef933c87fb4ae8ce5a005a4ebab7
 		</dependency>
 		<dependency>
 			<groupId>com.github.javafaker</groupId>
@@ -84,12 +117,19 @@
 			<version>1.0.2</version>
 		</dependency>
 		<dependency>
+<<<<<<< HEAD
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-oauth2-client</artifactId>
+=======
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>1.0.2</version>
+>>>>>>> f2775ceda548ef933c87fb4ae8ce5a005a4ebab7
 		</dependency>
 		<dependency>
 			<groupId>org.modelmapper</groupId>
 			<artifactId>modelmapper</artifactId>
+<<<<<<< HEAD
 			<version>3.2.0</version>
 		</dependency>
 		<dependency>
@@ -189,6 +229,10 @@
 			<version>2.11.0</version>
 		</dependency>
 
+=======
+			<version>3.1.1</version>
+		</dependency>
+>>>>>>> f2775ceda548ef933c87fb4ae8ce5a005a4ebab7
 	</dependencies>
 
 	<build>
@@ -196,6 +240,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+<<<<<<< HEAD
+=======
+				<version>${project.parent.version}</version>
+>>>>>>> f2775ceda548ef933c87fb4ae8ce5a005a4ebab7
 				<configuration>
 					<excludes>
 						<exclude>
@@ -208,4 +256,8 @@
 		</plugins>
 	</build>
 
+<<<<<<< HEAD
 </project>
+=======
+</project>
+>>>>>>> f2775ceda548ef933c87fb4ae8ce5a005a4ebab7
